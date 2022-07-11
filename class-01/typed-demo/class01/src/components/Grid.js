@@ -9,9 +9,9 @@ class Grid extends Component {
   render() {
     return (
       <>
-        <Row />
-        <Row />
-        <Row />
+        <Row value="Jacob" />
+        <Row value="Cameron"/>
+        <Row value="Adrian" />
       </>
     )
   }

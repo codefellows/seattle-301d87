@@ -34,9 +34,11 @@ Where we're going (preview of things to come)
 - es6 (fat arrow functions / es6 classes)
 - What is React?
 - Laptop Setup
-  - Create a Data Structures repo (Code Challenges).
+  - Create a Data Structures Repo (Code Challenges).
 
 ## Getting started with React
 
 - NodeJS
 - React Library
+
+## Code Challenge and Lab Prep
