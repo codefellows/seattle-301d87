@@ -53,6 +53,8 @@ let tas = people.filter(x => x.role == "TA");
 
 Is the process of computers having a conversation over the internet.
 
+![wrrc](./wrrc.png)
+
 ## Lap Prep: Functions as Props
 
 If a Parent Component gives the ability to update it's state to a child, we need to be careful.
