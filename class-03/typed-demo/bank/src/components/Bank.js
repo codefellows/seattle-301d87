@@ -25,6 +25,7 @@ class Bank extends Component {
         if (user.name === filteredUsers[0].name) {
           return filteredUsers[0];
         }
+        return user;
       });
 
       this.setState({
