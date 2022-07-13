@@ -1,0 +1,26 @@
+.App {
+  text-align: center;
+  background-image: linear-gradient(turquoise,navy);
+}
+
+.card{
+  margin:2rem;
+}
+
+#main{
+ display: inline-block;
+
+}
+
+#footer{
+  color:antiquewhite;
+}
+
+#h1{
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+
+#h3{
+  font-size: 2rem;
+}
