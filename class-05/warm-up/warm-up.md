@@ -2,10 +2,10 @@
 
 This code sample is written in C#. Read through the code and determine the output for the function.
 
-```javascript
+```c#
 public static string Value(string value, int position)
 {
-    string[] myArray = new string[5];
+    string[] myArray = new string[5]; // define an array of string called myArray, instantiate with a 5 index positions
 
     if (position >= myArray.Length)
     {
@@ -22,6 +22,6 @@ public static string Value(string value, int position)
     return $"Your value of {value} was accepted";
 }
 
-Value("sample string", 5);
-Value("another string", 2);
+Value("sample string", 5); // "Not a valid index."
+Value("another string", 2); // "Your value of another string was accepted"
 ```
