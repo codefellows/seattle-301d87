@@ -52,7 +52,7 @@ app.get('/error', (request, response) => {
 });
 
 // error handlers take a special 1st parameter, that will be any error thrown from another route handler
-app.use('*', (error, request, response) => {
+app.use('*', (error, request, response, next) => {
   response.send(500).send(error);
 });
 
