@@ -1,4 +1,4 @@
-# Class 09 - Advanced Topics: Refactoring Code, 
+# Class 09 - Advanced Topics: Refactoring Code, Modularization
 
 ## Warm Up
 
@@ -110,13 +110,102 @@ Promise.all([wait(null, 2000), wait(null, 5000)]).then(() => {
 
 // Takes in a number, if the number is divisible by 3 => wait 3 seconds to resolve the promise, if divisible by 5, wait 5 seconds to resolve the promise, if divisible by 3 and 5, reject the promise and console.log "fizzbuzz".
 
-function fizzBuzzPromise(number) {
-
+function fizzBuzzPromise(value) {
+  return new Promise ((resolve, reject) => {
+      
+    if (!(value % 5) && !(value % 3)){
+      reject();
+    }
+    else if (!(value % 3)){
+      setTimeout(() => {
+        console.log("divides 3")
+        resolve();
+      }, 3000)
+    }
+    else if (!(value % 5)){
+      setTimeout(() => {
+        console.log("divides 5")
+        resolve();
+      }, 5000)
+    }
+  })
 }
+
+fizzBuzzPromise(15).catch(() => console.log('fizzbuzz'));
 
 ```
 
-## Refactoring
+## Refactoring / Modulization
 
 Instead of adding features or changing the code output, we want the same thing just re-written to focus on the following:
-- Maintenance, Scale, Readability.
+
+- Maintenance
+  - Engineers and developers need to collaborate, and our code is a living thing, as our product changes, something small things change.
+    - example: params change from a single string to a object with a name property.
+    - single responsiblity principle:  making sure your function doesn't do too much.
+  
+```javascript
+
+// let's test this
+function captilizeString() {
+
+}
+
+// let's test this
+function handleName() {
+
+}
+
+function sayName(person) {
+
+  // things we need to do to name.
+
+  // 5 steps on our string, and now we have an object.
+  //  turn those 5 steps in 5 discreet functions.
+  return person.name.toUpperCase();
+
+}
+```
+
+- Scale: when our core products adds on a feature.
+
+```javascript
+
+let data= require('data.json');
+
+let people = [
+  {name: 'Jacob'},
+  {name: 'Cameron'}
+]
+
+function sayName(args) {
+
+  // if we use hard coded values, we are creating a solution for a particular use case, adding a parameter will allow more testable inputs and can increase our scabality.
+  people.forEach(() => {
+    // do something for each person
+  });
+}
+```
+
+- Readability: does you code look confusing or hard to read.
+
+```javascript
+
+function sayName(person) {
+
+  if(person.name) {
+    return person.name.toUpperCase();
+  } else {
+    throw new Error('Invalid person');
+  }
+
+}
+
+function sayName(person) {
+  return person.name ? person.name.toUpperCase() : throw new Error('Invalid person');
+}
+
+let p = array[0];
+let person = array[0]; // use descriptive variable name, no placeholders
+
+```
