@@ -5,13 +5,14 @@
 ## Code Review
 
 Array.map challenges
+
 - takes in 2 parameters (element and index)
 
 ```javascript
-let names = ['Jacob', "Cameron'];
+let names = ['Jacob', 'Cameron'];
 
-names.map(function(element, index) {
-
+let upperCaseNames = names.map(function(element, index) {
+  return element.toUpperCase();
 });
 
 ```
