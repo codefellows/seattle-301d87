@@ -14,6 +14,12 @@ let pokemon = new Pokemon({
   type
 });
 
-pokemon.save().then(data => {
-  console.log('Pokemon Created!! ', data);
-});
+try {
+  pokemon.save().then(data => {
+    console.log('Pokemon Created!! ', data);
+    mongoose.disconnect();
+  });
+} catch(e) {
+  console.error("Something is wrong", e);
+}
+
