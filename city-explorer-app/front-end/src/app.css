@@ -1,0 +1,23 @@
+body{
+  padding: 20px;
+  background-color: rgb(243, 223, 198);
+  margin: auto;
+}
+
+.cardGroup {
+  display:flex;
+  justify-content: center;
+}
+
+nav {
+  color: white;
+}
+
+nav h1{
+  width: 36%;
+}
+
+#map{
+  text-align: center;
+  width: 100%
+}

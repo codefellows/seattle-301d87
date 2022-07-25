@@ -10,7 +10,7 @@ async function clear() {
     await Cat.deleteMany({});
     console.log('Cats cleared');
   } catch (err) {
-    console.error(err)
+    console.error(err);
   } finally {
     mongoose.disconnect();
   }

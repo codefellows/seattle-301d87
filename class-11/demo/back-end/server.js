@@ -17,14 +17,12 @@ app.get('/cats', async (request, response) => {
   const filterQuery = {};
 
   if (request.query.location) {
-    filterQuery.location = request.query.location;
+    filterQuery.location = request.query.location.toLowerCase();
   }
-
+  console.log(filterQuery);
   const cats = await Cat.find(filterQuery);
 
   response.send(cats);
 });
 
 app.listen(PORT, () => console.log('Listening on PORT', PORT));
-
-

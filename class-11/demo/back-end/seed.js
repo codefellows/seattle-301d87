@@ -11,7 +11,7 @@ async function seed() {
     name: 'Jimmy John',
     color: 'orange',
     hasClaws: false,
-    location: 'Seattle',
+    location: 'seattle',
   });
   myCat.save(function (err) {
     if (err) console.error(err);
@@ -23,7 +23,7 @@ async function seed() {
     name: 'Jersey  Mike',
     color: 'calico',
     hasClaws: true,
-    location: 'Paris'
+    location: 'paris'
   });
 
   console.log('saved Jersey Mike');
