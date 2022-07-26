@@ -5,7 +5,6 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const Pokemon = require('./models/Pokemon.js');
-const { request } = require('express');
 
 mongoose.connect(process.env.DATABASE_URL);
 
