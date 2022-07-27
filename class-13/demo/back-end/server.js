@@ -9,7 +9,7 @@ const cors = require('cors');
 app.use(cors());
 app.use(express.json()); // needed to parse request body
 
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
+mongoose.connect(process.env.DATABASE_URL);
 
 const Cat = require('./models/cat');
 
