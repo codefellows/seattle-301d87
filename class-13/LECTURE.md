@@ -52,7 +52,9 @@ let pokemonValues = {
   ap: 100,
 }
 
-axios.patch('/resource/2378462865', pokemonValues).then(response.data);
-
-
+// add the object your axios request.
+axios.patch('/pokemon/2378462865', pokemonValues)
+  .then(response => {
+  let updatedPokemon = response.data;
+  });
 ```
