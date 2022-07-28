@@ -82,13 +82,17 @@ Acceptable formats include:
  - 555555-5555
  - 5555555555
 
-Your function should include a single regular expression pattern that matches any of these formats.
+Your function should include a single regular expression pattern that matches all of these formats.
 
 Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
   // Solution code here...
+  let regex = /^((\([0-9]{3}\)[ ]?)|([0-9]{3}(-|[ ])?))[0-9]{3}(-|[ ])?[0-9]{4}$/g;
+  let matches = phoneNumber.match(regex);
+  console.log(matches);
+  return Boolean(matches);
 };
 
 /* ------------------------------------------------------------------------------------------------

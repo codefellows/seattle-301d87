@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 3001;
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect(process.env.DATABASE_URL)
 
 // This will run the "verify" code on every route automatically
 // If the user is valid, we'll have them in request.user in every route!
