@@ -30,6 +30,7 @@ app.put('/books/:id', handlePutBooks);
 app.get('/user', handleGetUser);
 
 async function handleGetBooks(req, res) {
+  console.log(req.user);
   try {
     const books = await Book.find({ email: req.user.email });
     res.send(books);
@@ -42,7 +43,7 @@ async function handleGetBooks(req, res) {
 async function handlePostBooks(req, res) {
   const { title, description, status } = req.body;
   try {
-    const newBook = await Book.create({ ...req.body, email: req.user.email })
+    const newBook = await Book.create({ title, description, status, email: req.user.email });
     res.status(200).send(newBook)
   } catch (e) {
     res.status(500).send('server error');
